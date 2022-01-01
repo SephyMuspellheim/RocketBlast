@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    // Define rigid body component so parameters variables and methods can be accessed/changed
     Rigidbody RigidBodyComp;
+    // Define the audio source component so the audio source so it can be interacted with via code
+    AudioSource AudioSourceComp;
 
+    // Define and expose thurst and rotationv ariables to the user interface for tuning in real-time
     [SerializeField] float thrust;
     [SerializeField] float rotate;
     // Start is called before the first frame update
     void Start()
     {
+        //Set the rigid body comp with a reference to the RigidBody Component
         RigidBodyComp = GetComponent<Rigidbody>();
+
+        // Set the audio source reference
+        AudioSourceComp = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // On update: Process thrust and roation inputs from player
         ProcessThrust();
         ProcessRotation();
     }
@@ -27,6 +36,14 @@ public class Movement : MonoBehaviour
         {
             // Process input for Thrust
             RigidBodyComp.AddRelativeForce(Vector3.up * thrust * Time.deltaTime);
+            if(!AudioSourceComp.isPlaying)
+            {
+                AudioSourceComp.Play();
+            }
+        }
+        else
+        {
+            AudioSourceComp.Stop();
         }
     }
 
