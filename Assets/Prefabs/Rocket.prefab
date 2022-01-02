@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 5312220062823439765}
   - component: {fileID: 5312220062823439764}
   - component: {fileID: 5312220062823439763}
-  - component: {fileID: 2714220253424863675}
+  - component: {fileID: 8971404786750462449}
   - component: {fileID: 8846374930957122170}
   - component: {fileID: 1110949886}
+  - component: {fileID: 4962038553163128575}
+  - component: {fileID: -2929722800477169456}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -30,8 +32,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5312220062823439762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.17, y: 3.23, z: 0}
-  m_LocalScale: {x: 1.5, y: 3, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 4, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,20 +101,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &2714220253424863675
-MonoBehaviour:
+--- !u!65 &8971404786750462449
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5312220062823439762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f4652b1d27945488a8b23b4966a8dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 1000
-  rotate: 50
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: -0.5, z: -0.00000008940697}
 --- !u!54 &8846374930957122170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -225,3 +226,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4962038553163128575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312220062823439762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f4652b1d27945488a8b23b4966a8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 750
+  rotate: 35
+--- !u!114 &-2929722800477169456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312220062823439762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26ea5464ac566f478ee4227bfefaaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
